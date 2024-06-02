@@ -63,3 +63,9 @@ thead {
 #tableContainer {
     grid-column: 2 / 3; /* 從第二列到第三列 */
 }
+
+#banner {
+    background-color: #ab9e23;
+    padding: 20px;
+    text-align: center;
+}
