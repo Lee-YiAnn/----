@@ -64,8 +64,14 @@ thead {
     grid-column: 2 / 3; /* 從第二列到第三列 */
 }
 
+#gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 兩列等寬 */
+    width: 100%; /* 橫跨整個頁面 */
+}
+
 #banner {
     background-color: #ab9e23;
-    padding: 20px;
-    text-align: center;
+    text-align:left;
+    grid-column: 1 / -1; /* 從第一列到最後一列 */
 }
