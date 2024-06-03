@@ -2,7 +2,7 @@ const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const bodyParser = require('body-parser');
 const app = express();
-const port = 3000;
+const port = 4000;  // 已更改為 4000 端口
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -47,6 +47,16 @@ app.get('/api/search', (req, res) => {
             return res.status(500).json({ status: 'error', message: err.message });
         }
         res.json(rows);
+    });
+});
+
+app.delete('/api/delete/:id', (req, res) => {
+    const id = req.params.id;
+    db.run('DELETE FROM chicken_prices WHERE id = ?', id, function(err) {
+        if (err) {
+            return res.status(500).json({ status: 'error', message: err.message });
+        }
+        res.status(200).json({ status: 'success' });
     });
 });
 
