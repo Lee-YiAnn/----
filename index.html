@@ -22,6 +22,13 @@
         <h2>查詢數據</h2>
         <input type="text" id="searchInput" placeholder="輸入年份或商品名稱查詢">
         <button onclick="searchData()">查詢</button>
+
+        <h2>按年份區間查詢</h2>
+        <label for="startYear">開始年份：</label>
+        <input type="number" id="startYear" placeholder="如：2020"><br>
+        <label for="endYear">結束年份：</label>
+        <input type="number" id="endYear" placeholder="如：2023"><br>
+        <button onclick="searchByRange()">查詢區間</button>
     </div>
 
     <div id="tableContainer">

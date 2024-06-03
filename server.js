@@ -50,6 +50,16 @@ app.get('/api/search', (req, res) => {
     });
 });
 
+app.get('/api/range', (req, res) => {
+    const { startYear, endYear } = req.query;
+    db.all('SELECT * FROM chicken_prices WHERE substr(date, 1, 4) BETWEEN ? AND ?', [startYear, endYear], (err, rows) => {
+        if (err) {
+            return res.status(500).json({ status: 'error', message: err.message });
+        }
+        res.json(rows);
+    });
+});
+
 app.delete('/api/delete/:id', (req, res) => {
     const id = req.params.id;
     db.run('DELETE FROM chicken_prices WHERE id = ?', id, function(err) {
