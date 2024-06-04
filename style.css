@@ -63,8 +63,7 @@ thead {
 #tableContainer {
     max-height: 750px;  /* 調整高度以適應您的需求 */
     overflow-y: auto;   /* 啟用垂直滾動 */
-    margin-left: 50%;   /* 調整表格容器的位置 */
-    transform: translateX(-50%); /* 確保表格容器居中 */
+    margin-left: 25%;   /* 調整表格容器的位置 */
 }
 
 #gridContainer {
